@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCalendarAlt, faPhone, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const MultiStageForm = () => {
-    const { control, handleSubmit, formState: { errors }, trigger, getValues, setError } = useForm({ mode: 'onChange' });
+    const { control, handleSubmit, formState: { errors }, trigger, getValues, setError, reset } = useForm({ mode: 'onChange' });
     const [stage, setStage] = useState(0);
     const [submissionMessage, setSubmissionMessage] = useState('');
 
     const onSubmit = (data) => {
         console.log(data);
         setSubmissionMessage('Form submission successful!');
-        setStage(0); // Reset to stage 1
+        reset();
+        setStage(0);
         setTimeout(() => setSubmissionMessage(''), 3000);
     };
 
@@ -115,7 +116,13 @@ const MultiStageForm = () => {
                             <Controller
                                 name="nationality"
                                 control={control}
-                                rules={{ required: 'Nationality is required' }}
+                                rules={{
+                                    required: 'Nationality is required',
+                                    pattern: {
+                                        value: /^[A-Za-z]+$/,
+                                        message: 'Nationality must contain only alphabets',
+                                    },
+                                }}
                                 render={({ field }) => (
                                     <input
                                         {...field}
