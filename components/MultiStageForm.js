@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCalendarAlt, faPhone, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const MultiStageForm = () => {
-    const { control, handleSubmit, formState: { errors }, trigger } = useForm({ mode: 'onChange' });
+    const { control, handleSubmit, formState: { errors }, trigger, getValues, setError } = useForm({ mode: 'onChange' });
     const [stage, setStage] = useState(0);
     const [submissionMessage, setSubmissionMessage] = useState('');
 
     const onSubmit = (data) => {
         console.log(data);
         setSubmissionMessage('Form submission successful!');
-        // Clear the message after a few seconds (optional)
+        setStage(0); // Reset to stage 1
         setTimeout(() => setSubmissionMessage(''), 3000);
     };
 
@@ -20,6 +20,31 @@ const MultiStageForm = () => {
         const isCurrentStageValid = await trigger(getStageFields(stage));
 
         if (isCurrentStageValid) {
+            if (stage === 1) {
+                const { dob, departureDate, returnDate } = getValues();
+                const dobDate = new Date(dob);
+                const departureDateObj = new Date(departureDate);
+                const returnDateObj = new Date(returnDate);
+                const minDepartureDate = new Date(dobDate);
+                minDepartureDate.setFullYear(minDepartureDate.getFullYear() + 25);
+                const minReturnDate = new Date(departureDateObj);
+                minReturnDate.setFullYear(minReturnDate.getFullYear() + 2);
+
+                if (departureDateObj < minDepartureDate) {
+                    setError('departureDate', { type: 'manual', message: 'Departure date must be at least 25 years after DOB' });
+                    return;
+                }
+
+                if (returnDateObj < minReturnDate) {
+                    setError('returnDate', { type: 'manual', message: 'Return date must be at least 2 years after departure date' });
+                    return;
+                }
+
+                if (departureDateObj >= returnDateObj) {
+                    setError('returnDate', { type: 'manual', message: 'Return date must be after departure date' });
+                    return;
+                }
+            }
             setStage(stage + 1);
         }
     };
@@ -48,7 +73,7 @@ const MultiStageForm = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.formTitle}>Application Form</h2>
-            {submissionMessage && <div className={styles.successMessage}>{submissionMessage}</div>}
+            {stage === 0 && submissionMessage && <div className={styles.successMessage}>{submissionMessage}</div>}
             <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
                 {stage === 0 && (
                     <div className={styles.stage}>
@@ -251,8 +276,8 @@ const MultiStageForm = () => {
                         </label>
                     </div>
                 )}
-                <div className={styles.navigation}>
-                    {stage > 0 && <button type="button" onClick={prevStage} className={styles.button}>Previous</button>}
+                <div className={styles.buttonContainer}>
+                    {stage > 0 && <button type="button" onClick={prevStage} className={styles.button}>Back</button>}
                     {stage < 2 ? (
                         <button type="button" onClick={nextStage} className={styles.button}>Next</button>
                     ) : (
