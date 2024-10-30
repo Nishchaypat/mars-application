@@ -1,0 +1,37 @@
+/* styles/Description.module.css */
+
+.description {
+    padding: 40px;
+    background: radial-gradient(circle at center, #1c1c3a, #0c0c1e);
+    color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.description h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.description p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.start-button {
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: #1c1c3a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.start-button:hover {
+    background: #e6b800;
+}
