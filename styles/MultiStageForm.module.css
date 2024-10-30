@@ -70,7 +70,7 @@
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #ffcc00;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -78,5 +78,5 @@
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #4a4a80;
 }

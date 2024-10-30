@@ -1,4 +1,3 @@
-// pages/index.js
 import { useState } from 'react';
 import Description from '../components/Description';
 import MultiStageForm from '../components/MultiStageForm';
@@ -8,7 +7,7 @@ const HomePage = () => {
     const [isFormVisible, setFormVisible] = useState(false);
 
     const handleStart = () => {
-        setFormVisible(true);
+        setFormVisible(true); // Show the MultiStageForm when the button is clicked
     };
 
     return (
