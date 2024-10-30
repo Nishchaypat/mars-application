@@ -1,9 +1,7 @@
-/* styles/Description.module.css */
-
 .description {
     padding: 40px;
-    background: radial-gradient(circle at center, #1c1c3a, #0c0c1e);
-    color: #f0f0f0;
+    background: radial-gradient(circle at center, #8c8cbb, #ffffff);
+    color: #1c1c3a;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;

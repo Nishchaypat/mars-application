@@ -1,8 +1,18 @@
-// pages/_app.js
-import '../styles/globals.css';
+// App.js or your main component file
 
-function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />;
-}
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Description from './components/Description';
+import MultiStageForm from './components/MultiStageForm';
 
-export default MyApp;
+const App = () => {
+    return (
+        <Router>
+            <Switch>
+                <Route path="/" exact component={Description} />
+                <Route path="/multi-stage-form" component={MultiStageForm} />
+            </Switch>
+        </Router>
+    );
+};
+
+export default App;
