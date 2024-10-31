@@ -135,7 +135,7 @@ const MultiStageForm = ({ onBack }) => {
                             {errors.nationality && <span className={styles.error}>{errors.nationality.message}</span>}
                         </label>
                         <label className={styles.label}>
-                            Contact Information
+                            Email
                             <Controller
                                 name="email"
                                 control={control}
@@ -232,7 +232,7 @@ const MultiStageForm = ({ onBack }) => {
                             {errors.accommodation && <span className={styles.error}>{errors.accommodation.message}</span>}
                         </label>
                         <label className={styles.label}>
-                            Special Requests
+                            Special Requests | Preferences
                             <Controller
                                 name="specialRequests"
                                 control={control}
@@ -240,7 +240,7 @@ const MultiStageForm = ({ onBack }) => {
                                     <textarea
                                         {...field}
                                         className={styles.textarea}
-                                        placeholder="Any special requests..."
+                                        placeholder="Any special requests?"
                                     />
                                 )}
                             />
@@ -257,11 +257,11 @@ const MultiStageForm = ({ onBack }) => {
                                 control={control}
                                 rules={{ required: 'Health Declaration is required' }}
                                 render={({ field }) => (
-                                    <input
-                                        {...field}
-                                        className={errors.healthDeclaration ? styles.errorInput : styles.input}
-                                        type="text"
-                                    />
+                                    <select {...field} className={errors.accommodation ? styles.errorInput : styles.select}>
+                                        <option value="">Select...</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
                                 )}
                             />
                             {errors.healthDeclaration && <span className={styles.error}>{errors.healthDeclaration.message}</span>}
@@ -276,6 +276,20 @@ const MultiStageForm = ({ onBack }) => {
                                     <input
                                         {...field}
                                         className={errors.emergencyContact ? styles.errorInput : styles.input}
+                                        type="text"
+                                    />
+                                )}
+                            />
+                            {errors.emergencyContact && <span className={styles.error}>{errors.emergencyContact.message}</span>}
+                        </label>
+                        <label className={styles.label}>
+                            Medical Emergency
+                            <Controller
+                                name="medicalemergency"
+                                control={control}
+                                render={({ field }) => (
+                                    <input
+                                        {...field}
                                         type="text"
                                     />
                                 )}
