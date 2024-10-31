@@ -1,4 +1,3 @@
-// components/MultiStageForm.js
 
 import React, { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
@@ -6,7 +5,7 @@ import styles from '../styles/MultiStageForm.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCalendarAlt, faPhone, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
-const MultiStageForm = ({ onBack }) => { // Accept onBack prop
+const MultiStageForm = ({ onBack }) => { 
     const { control, handleSubmit, formState: { errors }, trigger, getValues, setError, reset } = useForm({ mode: 'onChange' });
     const [stage, setStage] = useState(0);
     const [submissionMessage, setSubmissionMessage] = useState('');

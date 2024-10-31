@@ -1,5 +1,3 @@
-/* MultiStageForm.module.css */
-
 .container {
     max-width: 600px;
     margin: auto;
@@ -67,9 +65,9 @@
 }
 
 .buttonContainer {
-    display: flex;                /* Use flexbox */
-    justify-content: space-between; /* Space buttons to the edges */
-    padding: 10px;              /* Optional: add padding */
+    display: flex;                
+    justify-content: space-between; 
+    padding: 10px;            
 }
 
 .button, .nextbutton {

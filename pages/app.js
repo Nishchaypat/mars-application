@@ -1,5 +1,3 @@
-// App.js
-
 import { useState } from 'react';
 import Description from '../components/Description';
 import MultiStageForm from '../components/MultiStageForm';

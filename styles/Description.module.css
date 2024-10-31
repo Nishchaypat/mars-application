@@ -1,13 +1,15 @@
 .description {
-    padding: 40px;
-    background: radial-gradient(circle at center, #8c8cbb, #ffffff);
-    color: #1c1c3a;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    transition: transform 0.3s;
+    display: flex;                /* Use flexbox for centering */
+    flex-direction: column;       /* Stack elements vertically */
+    justify-content: center;      /* Center vertically */
+    align-items: center;          /* Center horizontally */
+    height: 100vh;                /* Take full viewport height */
+    width: 100vw;                 /* Take full viewport width */
+    padding: 20px;               /* Optional padding */
+    box-sizing: border-box;      /* Ensure padding doesn't affect width */
+    text-align: center;          /* Center the text */
+    background-color: #f0f0f0;   /* Optional background color */
 }
-
 .description h2 {
     font-size: 28px;
     margin-bottom: 20px;

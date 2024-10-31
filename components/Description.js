@@ -1,5 +1,3 @@
-// components/Description.js
-
 import styles from '../styles/Description.module.css';
 import React from 'react';
 

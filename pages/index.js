@@ -7,7 +7,7 @@ const HomePage = () => {
     const [isFormVisible, setFormVisible] = useState(false);
 
     const handleStart = () => {
-        setFormVisible(true); // Show the MultiStageForm when the button is clicked
+        setFormVisible(true);
     };
 
     return (
