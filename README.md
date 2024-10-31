@@ -10,7 +10,6 @@ Live Site: [marsform.netlify.app](https://marsform.netlify.app/)
 - [Setup](#setup)
 - [Running the Application](#running-the-application)
 - [Usage](#usage)
-- [License](#license)
 
 ---
 
@@ -82,12 +81,6 @@ Live Site: [marsform.netlify.app](https://marsform.netlify.app/)
 
 4. **Submit the Form**
     - Upon successful form submission, the form resets to the first stage, displaying a success message.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
