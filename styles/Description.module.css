@@ -19,7 +19,7 @@
     margin-bottom: 20px;
 }
 
-.start-button {
+.startbutton {
     padding: 10px 20px;
     background: #ffcc00;
     color: #1c1c3a;
@@ -30,6 +30,6 @@
     transition: background 0.3s;
 }
 
-.start-button:hover {
+.startbutton:hover {
     background: #4a4a80;
 }

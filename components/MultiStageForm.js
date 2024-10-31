@@ -1,10 +1,12 @@
+// components/MultiStageForm.js
+
 import React, { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import styles from '../styles/MultiStageForm.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCalendarAlt, faPhone, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
-const MultiStageForm = () => {
+const MultiStageForm = ({ onBack }) => { // Accept onBack prop
     const { control, handleSubmit, formState: { errors }, trigger, getValues, setError, reset } = useForm({ mode: 'onChange' });
     const [stage, setStage] = useState(0);
     const [submissionMessage, setSubmissionMessage] = useState('');
@@ -238,8 +240,8 @@ const MultiStageForm = () => {
                                 render={({ field }) => (
                                     <textarea
                                         {...field}
-                                        className={styles.textArea}
-                                        placeholder="Any special requests or notes..."
+                                        className={styles.textarea}
+                                        placeholder="Any special requests..."
                                     />
                                 )}
                             />
@@ -248,7 +250,7 @@ const MultiStageForm = () => {
                 )}
                 {stage === 2 && (
                     <div className={styles.stage}>
-                        <h2><FontAwesomeIcon icon={faPaperPlane} /> Stage 3: Health and Emergency Information</h2>
+                        <h2><FontAwesomeIcon icon={faPaperPlane} /> Stage 3: Final Steps</h2>
                         <label className={styles.label}>
                             Health Declaration
                             <Controller
@@ -256,10 +258,10 @@ const MultiStageForm = () => {
                                 control={control}
                                 rules={{ required: 'Health Declaration is required' }}
                                 render={({ field }) => (
-                                    <textarea
+                                    <input
                                         {...field}
-                                        className={errors.healthDeclaration ? styles.errorInput : styles.textArea}
-                                        placeholder="Please declare any health conditions..."
+                                        className={errors.healthDeclaration ? styles.errorInput : styles.input}
+                                        type="text"
                                     />
                                 )}
                             />
@@ -284,12 +286,15 @@ const MultiStageForm = () => {
                     </div>
                 )}
                 <div className={styles.buttonContainer}>
-                    {stage > 0 && <button type="button" onClick={prevStage} className={styles.button}>Back</button>}
+                    {stage > 0 && <button type="button" className={styles.button} onClick={prevStage}>Back</button>}
                     {stage < 2 ? (
-                        <button type="button" onClick={nextStage} className={styles.button}>Next</button>
+                        <button type="button" className={styles.button} onClick={nextStage}>Next</button>
                     ) : (
                         <button type="submit" className={styles.button}>Submit</button>
                     )}
+                </div>
+                <div className={styles.backButtonContainer}>
+                    <button type="button" className={styles.backButton} onClick={onBack}>Back to Description</button>
                 </div>
             </form>
         </div>

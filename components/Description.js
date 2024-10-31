@@ -1,6 +1,7 @@
 // components/Description.js
 
 import styles from '../styles/Description.module.css';
+import React from 'react';
 
 const Description = ({ onStart }) => {
     return (
@@ -9,7 +10,7 @@ const Description = ({ onStart }) => {
             <p>
                 Get ready to embark on an unforgettable journey to the Red Planet! 🪐 This application is your 
                 ultimate guide for planning your space adventure. From preparing your travel documents to 
-                experiencing the thrill of zero gravity, we've got you covered! 
+                experiencing the thrill of zero gravity, we&apos;ve got you covered! 
             </p>
             <p>
                 Imagine walking on the surface of Mars, exploring its breathtaking landscapes, and witnessing 
@@ -23,9 +24,8 @@ const Description = ({ onStart }) => {
                 Ready to take the leap? Click the button below to start your application process and make 
                 your dreams a reality! 💫
             </p>
-            <button className={styles['start-button']} onClick={onStart}>
-                🚀 Start Application
-            </button>
+            <button onClick={onStart} className={styles.startbutton}>🚀 Start Application</button>
+
         </div>
     );
 };

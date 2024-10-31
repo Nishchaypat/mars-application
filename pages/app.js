@@ -1,19 +1,27 @@
-// App.js or your main component file
+// App.js
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Description from './components/Description';
-import MultiStageForm from './components/MultiStageForm';
-import Navbar from './components/Navbar';
+import { useState } from 'react';
+import Description from '../components/Description';
+import MultiStageForm from '../components/MultiStageForm';
+import Navbar from '../components/Navbar';
 
 const App = () => {
+    const [currentPage, setCurrentPage] = useState('description');
+
+    const handleStart = () => {
+        setCurrentPage('multiStageForm');
+    };
+
+    const handleBackToDescription = () => {
+        setCurrentPage('description');
+    };
+
     return (
-        <Router>
+        <>
             <Navbar />
-            <Switch>
-                <Route path="/" exact component={Description} />
-                <Route path="/multi-stage-form" component={MultiStageForm} />
-            </Switch>
-        </Router>
+            {currentPage === 'description' && <Description onStart={handleStart} />}
+            {currentPage === 'multiStageForm' && <MultiStageForm onBack={handleBackToDescription} />}
+        </>
     );
 };
 
