@@ -288,13 +288,10 @@ const MultiStageForm = ({ onBack }) => { // Accept onBack prop
                 <div className={styles.buttonContainer}>
                     {stage > 0 && <button type="button" className={styles.button} onClick={prevStage}>Back</button>}
                     {stage < 2 ? (
-                        <button type="button" className={styles.button} onClick={nextStage}>Next</button>
+                        <button type="button" className={styles.nextbutton} onClick={nextStage}>Next</button>
                     ) : (
                         <button type="submit" className={styles.button}>Submit</button>
                     )}
-                </div>
-                <div className={styles.backButtonContainer}>
-                    <button type="button" className={styles.backButton} onClick={onBack}>Back to Description</button>
                 </div>
             </form>
         </div>
