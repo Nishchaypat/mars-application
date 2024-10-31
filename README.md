@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mars Application 🚀
 
-## Getting Started
+Welcome to the **Mars Application**! This application serves as a comprehensive form system designed for users to fill out personal information, travel details, and health declarations, specifically tailored for an adventurous journey to Mars. 🌌🪐
 
-First, run the development server:
+Live Site: [marsform.netlify.app](https://marsform.netlify.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup](#setup)
+- [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Multi-Stage Form**: A three-stage form that guides users through personal details, travel preferences, and health information.
+- **Dynamic Validation**: Ensures valid date selections, email format, and required fields as users progress.
+- **Error Handling**: Custom error messages for form validation, including date checks for departure and return dates.
+- **Form Reset on Submit**: Successful submissions reset the form to the initial stage, displaying a success message.
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **React** with hooks for state management.
+- **React-Hook-Form** for form validation.
+- **FontAwesome** icons for visual appeal.
+- **CSS Modules** for styling.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Setup
 
-## Deploy on Vercel
+### Prerequisites
+- **Node.js** (v12 or higher)
+- **npm** or **yarn**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the Repository**
+    ```bash
+    git clone https://github.com/nishchaypat/mars-application.git
+    cd mars-application
+    ```
+
+2. **Install Dependencies**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+---
+
+## Running the Application
+
+1. **Start the Development Server**
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
+
+2. **Open Your Browser**
+   - Visit `http://localhost:3000` to view the application in your browser.
+
+---
+
+## Usage
+
+1. **Stage 1: Personal Information**
+    - Enter your name, date of birth, nationality, email, and phone number.
+    - All fields are validated; required fields will prompt for input if left blank.
+
+2. **Stage 2: Travel Preferences**
+    - Input your departure and return dates. Return dates must atleast 2 years after the departure date.
+    - Select accommodation preference and add any special requests.
+
+3. **Stage 3: Health and Emergency Information**
+    - Declare any health decelaration, emergency contact details, medical emergency (optional).
+
+4. **Submit the Form**
+    - Upon successful form submission, the form resets to the first stage, displaying a success message.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Enjoy planning your journey to Mars! 🛸🌠
