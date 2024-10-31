@@ -1,37 +1,59 @@
+/* Updated Description Styling */
 .description {
-    display: flex;                
-    flex-direction: column;       
-    justify-content: center;      
-    align-items: center;          
-    height: 100vh;                
-    width: 100vw;                 
-    padding: 20px;               
-    box-sizing: border-box;      
-    text-align: center;          
-    background: radial-gradient(circle,#565690 0%, #d8d8f0 50%, #f0f0f0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    background: radial-gradient(circle, #4040a0 0%, #e0e0f8 60%, #fafafa 100%);
+    color: #2a2a5a;
+    font-family: 'Helvetica Neue', sans-serif;
 }
+
+/* Enhanced Header */
 .description h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333366;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Improved Paragraph Style */
 .description p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 25px;
+    color: #3b3b5b;
+    opacity: 0.85;
 }
 
+/* CTA Button Styling */
 .startbutton {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: #ffcc00;
     color: #1c1c3a;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
-    transition: background 0.3s;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .startbutton:hover {
-    background: #4a4a80;
+    background: #f2b800;
+    color: #fafafa;
+    transform: scale(1.05);
+}
+
+/* Button Active State */
+.startbutton:active {
+    background: #e6a800;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
