@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar';
 
 const HomePage = () => {
     const [isFormVisible, setFormVisible] = useState(false);
-
     const handleStart = () => {
         setFormVisible(true);
     };
