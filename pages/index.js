@@ -8,7 +8,6 @@ const HomePage = () => {
     const handleStart = () => {
         setFormVisible(true);
     };
-
     return (
         <div className="container">
             <Navbar />
