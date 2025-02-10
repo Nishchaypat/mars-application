@@ -14,7 +14,7 @@ const HomePage = () => {
             {!isFormVisible ? (
                 <Description onStart={handleStart} />
             ) : (
-                <MultiStageForm />
+            <MultiStageForm />
             )}
         </div>
     );
