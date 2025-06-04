@@ -7,7 +7,7 @@ const Description = ({ onStart }) => {
             <h2>🚀 Welcome to the Mars Visit Application! 🌌</h2>
             <p>
                 Imagine walking on the surface of Mars, exploring its breathtaking landscapes, and witnessing 
-                its stunning sunsets. 🌅✨ 
+                its stunning sunsets. 🌅
             </p>
             <p>
                 Our team of experts has crafted a step-by-step process to ensure your journey is smooth and 
