@@ -1,4 +1,4 @@
-# Mars Application 🚀
+# Mars Application 
 
 Welcome to the **Mars Application**! This application serves as a comprehensive form system designed for users to fill out personal information, travel details, and health declarations, specifically tailored for an adventurous journey to Mars. 🌌🪐
 
